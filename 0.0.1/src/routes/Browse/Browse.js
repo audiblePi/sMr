@@ -6,13 +6,31 @@ import * as Actions from "./actions"
 
 import {miList, ListItem} from 'material-ui/List';
 import ActionInfo from 'material-ui/svg-icons/action/info';
+import Divider from 'material-ui/Divider';
 
-const iconStyles = {
-    float: "right"
-};
-const tableStyle = {
-    padding:"0 .5rem"
-}
+const movieCategories = [
+    {
+        name:"Movies In Theaters",
+    },
+    { 
+        name:"Movies Streaming tv/premium",
+    },
+    {
+        name:"Movies At Redbox"
+    },
+    {
+        name:"Moves On TV Now"
+    }
+]
+
+const musicCategories = [
+    {
+        name:"New Music Releases",
+    },
+    { 
+        name:"Live Shows Near You",
+    }
+]
 const api_key = "3ef2bb526e94e670db03c86dc84b4b79";
 const api_key2 = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZWYyYmI1MjZlOTRlNjcwZGIwM2M4NmRjODRiNGI3OSIsInN1YiI6IjU4ODUzOTRlOTI1MTQxMDQ2MDAyNjI4OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.DD5ZmEv6B-HBthVjWDzBoIoz-Upqa7v4-CyvlIMw_ao";
 
@@ -36,10 +54,16 @@ class Browse extends React.Component {
     render() {
         return (
             <div>
-                <div style={tableStyle}>
+                <div>
                     <miList>
-                        { this.props.new_releases.map( (row, index) => (
-                            <ListItem key={index} primaryText={row.original_title} rightIcon={<ActionInfo />} />
+                        { movieCategories.map( (row, index) => (
+                            <ListItem key={index} primaryText={row.name} rightIcon={<ActionInfo />} />
+                        ))}
+                    </miList>
+                    <Divider />
+                    <miList>
+                        { musicCategories.map( (row, index) => (
+                            <ListItem key={index} primaryText={row.name} rightIcon={<ActionInfo />} />
                         ))}
                     </miList>
                 </div>
