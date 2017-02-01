@@ -11,11 +11,11 @@ class SearchResults extends React.Component {
     }
 
     componentWillMount(){
-        //console.log("componentWillMount");
+        console.log("componentWillMount");
     }
 
     componentDidUpdate(){
-        //console.log("componentDidUpdaate");
+        console.log("componentDidUpdaate");
     }
     
     render() {
