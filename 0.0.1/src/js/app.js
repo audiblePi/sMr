@@ -12,6 +12,7 @@ import store from "../store/store.js";
 import Layout from "../components/Layout.js";
 import Index from "../routes/Index/Index.js";
 import Search from "../routes/Search/Search.js";
+import SearchResults from "../routes/SearchResults/SearchResults.js";
 import Browse from "../routes/Browse/Browse.js";
 import Discover from "../routes/Discover/Discover.js";
 
@@ -23,7 +24,7 @@ ReactDOM.render(
 		  <Router history={hashHistory}>
 		    <Route path="/" component={Layout}>
 		      <IndexRoute component={Search}></IndexRoute>
-		      {/*<Route path="search" name="search" component={Search}></Route>*/}
+		      <Route path="searchResults/:id" name="searchResults" component={SearchResults}></Route>}
 		      <Route path="browse" name="browse" component={Browse}></Route>
 		      <Route path="discover" name="discover" component={Discover}></Route>
 		    </Route>

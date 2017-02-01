@@ -15,19 +15,19 @@ function _saveContacts(c){
 
 export default function reducer ( state=initialState, action){
 	switch ( action.type ){
- 		case Actions.FETCH_DONE : 
+ 		case Actions.BROWSE_FETCH_DONE : 
  			return Object.assign( {}, state, { new_releases : action.data.results } );
  			break;
- 		case Actions.FETCH_FAILED : 
+ 		case Actions.BROWSE_FETCH_FAILED : 
  			return state;
  			break;
- 		case Actions.ADD_CONTACT :
+ 		case Actions.BROWSE_ADD_CONTACT :
  			var newState = Object.assign( {}, state);
  			newState.contacts.push(action.newContact);
  			_saveContacts(newState.contacts);//why is this here?
  			return newState;
  			break;
- 		case Actions.EDIT_CONTACT : 
+ 		case Actions.BROWSE_EDIT_CONTACT : 
  			var index = state.contacts.findIndex ( function(e){
  				return e.id == action.id;
  			});
@@ -36,7 +36,7 @@ export default function reducer ( state=initialState, action){
  			_saveContacts(newState.contacts);
  			return newState;
  			break;
- 		case Actions.DELETE_CONTACT : 
+ 		case Actions.BROWSE_DELETE_CONTACT : 
  			var newList = state.contacts.filter(function(currentValue,index,arr){
  			 	return currentValue.id != action.id;
  			});

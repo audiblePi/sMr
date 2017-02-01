@@ -1,22 +1,22 @@
 import axios from 'axios';
 
-export const FETCH_DONE = "FETCH_DONE";
-export const FETCH_FAILED = "FETCH_FAILED";
-export const ADD_CONTACT = "ADD_CONTACT";
-export const EDIT_CONTACT = "EDIT_CONTACT";
-export const DELETE_CONTACT = "DELETE_CONTACT";
-export const SAVE_CONTACTS = "SAVE_CONTACTS";
+export const BROWSE_FETCH_DONE = "BROWSE_FETCH_DONE";
+export const BROWSE_FETCH_FAILED = "BROWSE_FETCH_FAILED";
+export const BROWSE_ADD_CONTACT = "BROWSE_ADD_CONTACT";
+export const BROWSE_EDIT_CONTACT = "BROWSE_EDIT_CONTACT";
+export const BROWSE_DELETE_CONTACT = "BROWSE_DELETE_CONTACT";
+export const BROWSE_SAVE_CONTACTS = "BROWSE_SAVE_CONTACTS";
 
 export function fetchDone(status, data){
 	return {
-		type: FETCH_DONE,
+		type: BROWSE_FETCH_DONE,
 		fetching: false,
 		data: data
 	}
 }
 export function fetchFailed(error){
 	return {
-		type: FETCH_FAILED,
+		type: BROWSE_FETCH_FAILED,
 		fetching: false
 	}
 }
@@ -38,20 +38,20 @@ export function fetch(endpoint){
 }
 export function addContact(newContact){
 	return {
-		type: ADD_CONTACT,
+		type: BROWSE_ADD_CONTACT,
 		newContact: newContact
 	}
 }
 export function editContact(id, contact){
 	return {
-		type: EDIT_CONTACT,
+		type: BROWSE_EDIT_CONTACT,
 		id: id,
 		contact: contact
 	}
 }
 export function deleteContact(id){
 	return {
-		type: DELETE_CONTACT,
+		type: BROWSE_DELETE_CONTACT,
 		id: id
 	}
 }
