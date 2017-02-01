@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router";
 
-import * as Actions from "./actions"
+//import * as Actions from "./actions"
 
 import {miList, ListItem} from 'material-ui/List';
 import ActionInfo from 'material-ui/svg-icons/action/info';
@@ -43,7 +43,7 @@ class Browse extends React.Component {
         //this.props.fetch();
         //https://api.themoviedb.org/3/movie/550?api_key=3ef2bb526e94e670db03c86dc84b4b79
         //this.props.dispatch( Actions.fetch("https://www.themoviedb.org/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22") );
-        this.props.dispatch( Actions.fetch("https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key="+api_key) );
+        //this.props.dispatch( Actions.fetch("https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US&api_key="+api_key) );
     }
 
     componentDidUpdate(){
@@ -83,3 +83,6 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps)(Browse);
+// export default Browse;
+
+
