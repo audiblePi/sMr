@@ -32,8 +32,8 @@ class Search extends React.Component {
     }
 
     componentDidUpdate(){
-        console.log("componentDidUpdaate");
-        console.log(this.props.state);
+        //console.log("componentDidUpdaate");
+        //console.log(this.props.state);
     }
 
     handleChange = (event) => {
@@ -43,11 +43,6 @@ class Search extends React.Component {
 
     handleSubmit = (event) => {
         //this.props.dispatch( Actions.fetchMovies(this.state.value) );
-    }
-
-    renderResult = () => {
-        //this.props.dispatch( Actions.fetchMovies(this.state.value) );
-        console.log("renderResults");
     }
 
     render() {
@@ -63,7 +58,7 @@ class Search extends React.Component {
                 {/* this.props.state.fetched ? <p>'fetched'</p> : " " */ }
                 <miList>
                     { this.props.state.movieMatches.map( (row, index) => (
-                        <ListItem key={index} primaryText={row.original_title} rightIcon={<ActionInfo />} />
+                        <ListItem key={index} containerElement={<Link to={`/SearchResults/${row.title}`}/>} primaryText={row.title} rightIcon={<ActionInfo />} />
                     ))}
                 </miList>
             </div>
