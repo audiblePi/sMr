@@ -9,20 +9,22 @@ const initialState = {
 
 export default function reducer ( state=initialState, action){
 	switch ( action.type ){
-		case Actions.FETCHING : 
+		case Actions.SEARCH_FETCHING : 
  			return Object.assign( {}, state, { 
  				fetching: action.fetching,
  				fetched: action.fetched 
  			} );
  			break;
- 		case Actions.FETCH_MOVIES_DONE : 
+ 		case Actions.SEARCH_FETCH_MOVIES_DONE : 
+ 			console.log("SEARCH_FETCH_MOVIES_DONE");
+ 			console.log(Actions);
  			return Object.assign( {}, state, { 
  				fetching: action.fetching, 
  				fetched: action.fetched, 
  				movieMatches: action.data.results 
  			} );
  			break;
- 		case Actions.FETCH_FAILED : 
+ 		case Actions.SEARCH_FETCH_FAILED : 
  			return Object.assign( {}, state, { 
  				fetching: action.fetching,
  				fetched: action.fetched, 
